@@ -162,22 +162,25 @@ img {
   margin-left: auto;
 }
 
-.icon-address {
-  margin: 0;
-  margin-right: 10px;
-  vertical-align: middle;
+.address-item .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.address-text {
-  vertical-align: middle;
+.icon-address {
+  display: block;
+  margin: 0;
+  margin-right: 10px;
+  fill: currentColor;
+
+  transition: fill var(--transition-duration) var(--transition-timing-function);
 }
 
 .site-address a {
   color: var(--primary-text-color);
-  fill: var(--primary-text-color);
 
-  transition: color var(--transition-duration) var(--transition-timing-function),
-    fill var(--transition-duration) var(--transition-timing-function);
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .site-address .address-item:not(:last-child) {
@@ -187,7 +190,6 @@ img {
 .site-address a:hover,
 .site-address a:focus {
   color: var(--accent-color);
-  fill: var(--accent-color);
 }
 
 /* ФУТЕР */
@@ -305,7 +307,7 @@ footer {
   display: flex;
 }
 
-.email {
+.email-button {
   width: 358px;
   height: 50px;
   padding: 15px 16px;
@@ -318,6 +320,7 @@ footer {
 
   background-color: transparent;
 }
+
 .button {
   display: inline-flex;
   align-items: center;

@@ -55,6 +55,153 @@
   letter-spacing: 0.06em;
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  padding: 40px 40px;
+  border-radius: 4px;
+
+  background-color: var(--primary-white-color);
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.flex-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  display: block;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--title-text-color);
+  margin-bottom: 30px;
+}
+
+.modal-form {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 12px 0;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.form-field .icon-modal {
+  color: var(--title-text-color);
+}
+
+.form-field .modal-text {
+  position: absolute;
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+
+  letter-spacing: 0.01em;
+
+  color: var(--primary-text-color);
+}
+
+.icon-modal {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+
+  fill: currentColor;
+
+  transition: color var(--transition-duration) var(--transition-timing-function);
+}
+
+.comment.form-field .modal-text {
+  top: 12px;
+  left: 16px;
+  transform: translate(0);
+}
+
+.comment textarea {
+  padding: 0;
+  margin: 0;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.modal-form input[type='checkbox'] {
+  margin-bottom: 20px;
+  border: 0;
+}
+
+.modal-form-check {
+  margin-bottom: 30px;
+  border: 0;
+}
+
+.modal-form-check a {
+  color: var(--accent-color);
+}
+
+.modal .button {
+  display: block;
+  padding: 10px 55px;
+  margin: 0 auto;
+}
+
+.icon-close {
+  fill: currentColor;
+}
+
+.icon-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--title-text-color);
+  background-color: var(--primary-white-color);
+  cursor: pointer;
+
+  transition: color var(--transition-duration) var(--transition-timing-function);
+}
+
+.icon-modal-close:hover {
+  color: var(--accent-color);
+}
+
 /* НАШИ ПРЕИМУЩЕСТВА*/
 
 .section {
@@ -212,6 +359,7 @@
 .icon {
   width: 20px;
   height: 20px;
+  fill: currentColor;
 }
 
 .team-icon .social-icon {
@@ -224,16 +372,16 @@
 }
 
 .team-icon a {
-  fill: var(--secondary-bg-color);
+  color: var(--secondary-bg-color);
 
-  transition: fill var(--transition-duration) var(--transition-timing-function),
+  transition: color var(--transition-duration) var(--transition-timing-function),
     background-color var(--transition-duration)
       var(--transition-timing-function);
 }
 
 .team-icon a:hover,
 .team-icon a:focus {
-  fill: var(--primary-white-color);
+  color: var(--primary-white-color);
   background-color: var(--accent-color);
 }
 
@@ -251,6 +399,10 @@
   margin-right: 30px;
 }
 
+.client-icon {
+  fill: currentColor;
+}
+
 .client-company.link {
   display: flex;
   justify-content: center;
@@ -259,16 +411,16 @@
   border: 1px solid var(--secondary-bg-color);
   border-radius: 4px;
 
-  fill: var(--secondary-bg-color);
+  color: var(--secondary-bg-color);
 
   transition: border-color var(--transition-duration)
       var(--transition-timing-function),
-    fill var(--transition-duration) var(--transition-timing-function);
+    color var(--transition-duration) var(--transition-timing-function);
 }
 
 .client-company.link:hover,
 .client-company.link:focus {
   border-color: var(--accent-color);
-  fill: var(--accent-color);
+  color: var(--accent-color);
 }
 /* Футер */

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework/05</title>
+    <title>Homework/06</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -61,7 +61,71 @@
       <section class="hero">
         <div class="overlay">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <a href="" class="hero-button link">Заказать услугу</a>
+          <a href="" class="hero-button link" data-modal-open
+            >Заказать услугу</a
+          >
+        </div>
+        <div class="backdrop" data-modal>
+          <div class="modal">
+            <form action="" class="flex-form">
+              <b class="modal-title">Оставьте свои данные, мы вам перезвоним</b>
+
+              <label for="name" class="form-field">
+                <input type="name" name="name" class="modal-form" />
+                <span class="modal-text">Имя</span>
+                <svg width="18" height="18" class="icon-modal">
+                  <use href="./images/svg/sprite.svg#icon-person"></use>
+                </svg>
+              </label>
+
+              <label for="tel" class="form-field"
+                ><span class="modal-text">Телефон</span
+                ><input type="tel" name="phone" class="modal-form" /><svg
+                  width="18"
+                  height="18"
+                  class="icon-modal"
+                >
+                  <use href="./images/svg/sprite.svg#icon-phone-modal"></use>
+                </svg>
+              </label>
+
+              <label for="mail" class="form-field"
+                ><span class="modal-text">Почта</span>
+                <input type="email" name="email" class="modal-form" />
+                <svg width="18" height="18" class="icon-modal">
+                  <use href="./images/svg/sprite.svg#icon-email"></use>
+                </svg>
+              </label>
+
+              <label for="comment" class="comment form-field"
+                ><span class="modal-text">Комментарий</span
+                ><textarea
+                  name="comment"
+                  id="comment"
+                  rows="6"
+                  class="modal-form"
+                ></textarea>
+              </label>
+
+              <div class="modal-form-check">
+                <input type="checkbox" name="accept" id="accept" />
+                <label for="accept"
+                  >Соглашаюсь с рассылкой и принимаю
+                  <a href="">Условия договора</a>
+                </label>
+              </div>
+
+              <button type="submit" class="button">
+                Отправить
+              </button>
+            </form>
+
+            <button type="button" class="icon-modal-close" data-modal-close>
+              <svg width="11" height="11" class="icon-close">
+                <use href="./images/svg/sprite.svg#icon-close"></use>
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -491,7 +555,14 @@
             <form action="">
               <b class="auth">Подпишитесь на рассылку</b>
               <div class="flex-wrap">
-                <input type="email" placeholder="E-mail" class="email" />
+                <label for="">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="E-mail"
+                    class="email-button"
+                  />
+                </label>
                 <button type="submit" class="button">
                   Подписаться
                   <svg class="icon-send">
@@ -504,5 +575,6 @@
         </div>
       </footer>
     </main>
+    <script src="./js/modal.js"></script>
   </body>
 </html>
