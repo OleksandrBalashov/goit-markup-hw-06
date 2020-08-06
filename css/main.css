@@ -62,6 +62,7 @@
 
   width: 100%;
   height: 100%;
+
   background-color: rgba(0, 0, 0, 0.2);
 
   opacity: 1;
@@ -74,11 +75,15 @@
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
 .modal {
   position: absolute;
-  top: 200px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 
   min-width: 528px;
   min-height: 581px;
@@ -89,6 +94,10 @@
 
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--transition-duration)
+    var(--transition-timing-function);
 }
 
 .flex-form {
@@ -101,6 +110,7 @@
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
+
   color: var(--title-text-color);
   margin-bottom: 30px;
 }
